@@ -157,22 +157,6 @@ nr_r=3}
 C {iopin.sym} 520 -290 3 0 {name=p1 lab=VCC}
 C {iopin.sym} 230 10 2 0 {name=p2 lab=LOP}
 C {iopin.sym} 300 360 1 0 {name=p3 lab=GND}
-C {sg13g2_pr/rppd.sym} 150 -170 0 1 {name=R1
-w=9.34e-6
-l=10.97e-6
-model=rppd
-body=GND
-spiceprefix=X
-b=0
-m=1
-value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
-}
-C {sg13g2_pr/cap_cmim.sym} 290 -170 0 1 {name=C1
-model=cap_cmim
-w=9.62e-6
-l=12.54e-6
-m=1
-spiceprefix=X}
 C {sg13g2_pr/inductor.sym} 700 -170 0 0 {name=L2
 m=1
 value=1.54n
@@ -183,35 +167,24 @@ w=3e-6
 s=3e-6
 d=80e-6
 nr_r=3}
-C {sg13g2_pr/rppd.sym} 990 -170 0 0 {name=R2
-w=9.34e-6
-l=10.97e-6
-model=rppd
-body=GND
-spiceprefix=X
-b=0
-m=1
-value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
-}
-C {sg13g2_pr/cap_cmim.sym} 840 -170 0 0 {name=C2
-model=cap_cmim
-w=9.62e-6
-l=12.54e-6
-m=1
-spiceprefix=X}
+C {iopin.sym} 560 -290 3 0 {name=p4 lab=VCTR}
+C {iopin.sym} 80 160 3 0 {name=p5 lab=ICC}
+C {iopin.sym} 900 20 2 1 {name=p6 lab=LON}
 C {sg13g2_pr/sg13_svaricap.sym} 560 -120 0 0 {name=C3 
 model=sg13_hv_svaricap 
 w=9.74u 
 l=0.8u 
 Nx=3 
+body=GND
 spiceprefix=X
-}
-C {iopin.sym} 560 -290 3 0 {name=p4 lab=VCTR}
+mm_ok=1
+ }
 C {sg13g2_pr/sg13_lv_nmos.sym} 280 130 0 0 {name=M3
 l=0.13u
 w=40u
 ng=5
 m=1
+mm_ok=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
@@ -220,6 +193,7 @@ l=0.13u
 w=40u
 ng=5
 m=1
+mm_ok=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
@@ -228,6 +202,7 @@ l=0.13u
 w=120u
 ng=15
 m=1
+mm_ok=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
@@ -236,8 +211,43 @@ l=0.13u
 w=120u
 ng=15
 m=1
+mm_ok=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 80 160 3 0 {name=p5 lab=ICC}
-C {iopin.sym} 900 20 2 1 {name=p6 lab=LON}
+C {sg13g2_pr/cap_cmim.sym} 290 -170 0 0 {name=C1
+model=cap_cmim
+w=9.62e-6
+l=12.54e-6
+m=1
+mm_ok=1
+spiceprefix=X}
+C {sg13g2_pr/cap_cmim.sym} 840 -170 0 0 {name=C2
+model=cap_cmim
+w=9.62e-6
+l=12.54e-6
+m=1
+mm_ok=1
+spiceprefix=X}
+C {sg13g2_pr/rppd.sym} 990 -170 0 0 {name=R2
+w=9.34e-6
+l=10.97e-6
+model=rppd
+body=GND
+spiceprefix=X
+b=0
+m=1
+mm_ok=1
+value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
+}
+C {sg13g2_pr/rppd.sym} 150 -170 0 1 {name=R1
+w=9.34e-6
+l=10.97e-6
+model=rppd
+body=GND
+spiceprefix=X
+b=0
+m=1
+mm_ok=1
+value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
+}
